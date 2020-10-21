@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: right-lyrics-app
+spec:
+  destination:
+    namespace: right-lyrics
+    server: https://kubernetes.default.svc
+  project: right-lyrics
+  source:
+    path: songs-service/k8s/overlays/prod
+    repoURL: https://github.com/luigiaparicio/right-lyrics
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  sync:
+    comparedTo:
+      destination:
+        namespace: right-lyrics
+        server: https://kubernetes.default.svc
+      source:
+        path: songs-service/k8s/overlays/prod
+        repoURL: https://github.com/luigiaparicio/right-lyrics
+        targetRevision: master
