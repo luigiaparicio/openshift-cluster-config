@@ -11,16 +11,4 @@ spec:
     path: pricelist/database
     repoURL: https://github.com/luigiaparicio/gitops-examples
     targetRevision: master
-  syncPolicy:
-    automated:
-      prune: false
-      selfHeal: false
-  sync:
-    comparedTo:
-      destination:
-        namespace: pricelist
-        server: https://kubernetes.default.svc
-      source:
-        path: pricelist/database
-        repoURL: https://github.com/luigiaparicio/gitops-examples
-        targetRevision: master
+  syncPolicy: {}
