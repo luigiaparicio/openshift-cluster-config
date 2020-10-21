@@ -31,3 +31,6 @@ spec:
     - name: examples
       type: git
       url: https://github.com/luigiaparicio/gitops-examples
+    - name: right-lyrics
+      type: git
+      url: https://github.com/luigiaparicio/right-lyrics
